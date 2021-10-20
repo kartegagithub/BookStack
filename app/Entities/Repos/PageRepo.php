@@ -63,6 +63,15 @@ class PageRepo
         return $page;
     }
 
+    public function getByReferenceCode(string $referenceCode): ?Page
+    {
+        $page = Page::query()
+            ->where('referenceCode', '=', $referenceCode)
+            ->first();
+
+        return $page;
+    }
+
     /**
      * Get a page by its old slug but checking the revisions table
      * for the last revision that matched the given page and book slug.

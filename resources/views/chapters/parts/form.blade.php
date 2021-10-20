@@ -5,7 +5,10 @@
     <label for="name">{{ trans('common.name') }}</label>
     @include('form.text', ['name' => 'name', 'autofocus' => true])
 </div>
-
+<div class="form-group title-input">
+    <label for="name">Referans Kodu</label>
+    @include('form.text', ['name' => 'referenceCode', 'autofocus' => false])
+</div>
 <div class="form-group description-input">
     <label for="description">{{ trans('common.description') }}</label>
     @include('form.textarea', ['name' => 'description'])

@@ -1,4 +1,8 @@
 <div class="entity-meta">
+<div>
+        @icon('key'){{ "ID:" }}
+            {{ $entity->id }}
+        </div>
     @if($entity->isA('revision'))
         <div>
             @icon('history'){{ trans('entities.pages_revision') }}
@@ -19,6 +23,13 @@
             @icon('user'){!! trans('entities.meta_owned_name', [
             'user' => "<a href='{$entity->ownedBy->getProfileUrl()}'>".e($entity->ownedBy->name). "</a>"
         ]) !!}
+        </div>
+    @endif
+
+    @if (($entity->isA('page') || $entity->isA('chapter')) && $entity->referenceCode)
+        <div>
+        @icon('history'){{ "Ref:" }}
+            {{ $entity->referenceCode }}
         </div>
     @endif
 

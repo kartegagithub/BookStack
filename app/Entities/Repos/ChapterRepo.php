@@ -42,6 +42,14 @@ class ChapterRepo
         return $chapter;
     }
 
+    public function getByReferenceCode(string $referenceCode): ?Chapter
+    {
+        $chapter = Chapter::query()
+            ->where('referenceCode', '=', $referenceCode)
+            ->first();
+
+        return $chapter;
+    }
     /**
      * Create a new chapter in the system.
      */

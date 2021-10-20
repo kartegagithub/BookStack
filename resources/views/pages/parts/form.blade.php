@@ -72,6 +72,9 @@
         <div refs="page-editor@titleContainer" class="input">
             @include('form.text', ['name' => 'name', 'model' => $model, 'placeholder' => trans('entities.pages_title')])
         </div>
+        <div refs="page-editor@referenceCode" class="input">
+            @include('form.text', ['name' => 'referenceCode', 'model' => $model, 'placeholder' => "Referans Kodu"])
+        </div>
     </div>
 
     {{--Editors--}}
